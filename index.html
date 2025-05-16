@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hòa Poy TV - Chia sẻ game & script</title>
   <style>
     body {
@@ -18,6 +18,7 @@
       font-size: 2em;
       font-weight: bold;
       letter-spacing: 1px;
+      box-shadow: 0 4px 8px rgba(0,198,255,0.4);
     }
     header span {
       color: #fff;
@@ -33,14 +34,54 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: 500;
+      transition: color 0.3s ease;
     }
     nav a:hover {
+      color: #66d9ff;
       text-decoration: underline;
     }
     main {
       padding: 20px;
       max-width: 900px;
       margin: auto;
+    }
+    .bio-container {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,198,255,0.3);
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .bio-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #00c6ff;
+      box-shadow: 0 0 15px #00c6ff;
+      object-fit: cover;
+      margin: 0 auto 20px auto;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .bio-avatar:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 25px #66d9ff;
+    }
+    .bio-name {
+      font-size: 2em;
+      font-weight: 700;
+      color: #00c6ff;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .bio-desc {
+      font-size: 1.1em;
+      color: #ccc;
+      line-height: 1.5;
+      max-width: 600px;
+      margin: 0 auto;
     }
     .post {
       background: #1a1a1a;
@@ -57,40 +98,23 @@
     .post p {
       color: #ccc;
     }
-    .form-container {
-      background: #141414;
-      padding: 20px;
-      margin-bottom: 40px;
-      border: 1px solid #333;
-      border-radius: 10px;
-    }
-    .form-container input, .form-container textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 6px;
-      background: #222;
-      color: #fff;
-    }
-    .form-container button {
-      padding: 10px 20px;
-      background: #00c6ff;
-      border: none;
-      border-radius: 6px;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .form-container button:hover {
-      background: #009edc;
-    }
     footer {
       background: #111;
       color: #888;
       text-align: center;
       padding: 10px;
       font-size: 0.9em;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -102,19 +126,23 @@
     <a href="#">Trang chủ</a>
     <a href="#">Game mới</a>
     <a href="#">Script hot</a>
-    <a href="https://www.youtube.com/@hoapoytv" target="_blank">Kênh YouTube</a>
+    <a href="https://www.youtube.com/@hoapoytv" target="_blank" rel="noopener noreferrer">Kênh YouTube</a>
   </nav>
   <main>
-    <div class="form-container">
-      <h2>📝 Viết bài mới</h2>
-      <input type="text" id="title" placeholder="Tiêu đề bài viết">
-      <textarea id="content" rows="5" placeholder="Nội dung bài viết"></textarea>
-      <button onclick="addPost()">Đăng bài</button>
-    </div>
+    <section class="bio-container">
+      <img src="https://i.pravatar.cc/140?u=hoapoytv" alt="Avatar Hòa Poy TV" class="bio-avatar" />
+      <div class="bio-name">Hòa Poy TV</div>
+      <div class="bio-desc">
+        Xin chào! Mình là Hòa Poy, chuyên chia sẻ những file game, script hot và nhiều kiến thức thú vị về lập trình, game và công nghệ. Cảm ơn bạn đã ghé thăm trang web của mình! Hãy theo dõi kênh YouTube để không bỏ lỡ video mới nhé!
+      </div>
+    </section>
 
-    <div id="posts">
-      <!-- Danh sách bài viết sẽ tự động được thêm ở đây -->
-    </div>
+    <section>
+      <h2>📄 Danh sách bài viết</h2>
+      <div id="posts">
+        <!-- Danh sách bài viết sẽ được tải ở đây -->
+      </div>
+    </section>
   </main>
   <footer>
     © 2025 Hòa Poy TV - Chia sẻ game & script miễn phí
@@ -135,22 +163,6 @@
       } catch (e) {
         console.error("Không thể tải danh sách bài viết.", e);
       }
-    }
-
-    function addPost() {
-      const title = document.getElementById('title').value.trim();
-      const content = document.getElementById('content').value.trim();
-      if (!title || !content) {
-        alert("Vui lòng nhập tiêu đề và nội dung!");
-        return;
-      }
-      const post = document.createElement('div');
-      post.className = 'post';
-      post.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
-      document.getElementById('posts').prepend(post);
-
-      document.getElementById('title').value = '';
-      document.getElementById('content').value = '';
     }
 
     loadPostList();
