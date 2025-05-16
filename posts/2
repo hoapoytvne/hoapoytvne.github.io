@@ -1,0 +1,35 @@
+<div class="post-container">
+<style>
+  .post-container { font-family: 'Segoe UI', sans-serif; color: #333; background: #fff; padding: 25px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); max-width: 800px; margin: auto; }
+  .post-container h2 { font-size: 26px; color: #2c3e50; margin-bottom: 20px; }
+  .post-container .content { font-size: 17px; line-height: 1.6; margin-bottom: 25px; }
+  .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .video-wrapper iframe { position: absolute; width: 100%; height: 100%; left: 0; top: 0; border: none; }
+  .download-section { margin-top: 20px; text-align: center; }
+  .download-section a { display: inline-block; background: #007bff; color: #fff; text-decoration: none; padding: 12px 20px; margin: 8px; border-radius: 8px; transition: background 0.3s ease; }
+  .download-section a:hover { background: #0056b3; }
+  .warning{color:#e74c3c;font-size:15px;margin-top:14px;font-weight:bold;animation:pulse 1.8s infinite}@keyframes pulse{0%{opacity:1}50%{opacity:.5}100%{opacity:1}}
+  .divider { margin: 30px 0; text-align: center; }
+  .divider-line { border-top: 2px dashed #ccc; margin: 0 auto; width: 80%; }
+  .random-story-box {
+    background: #f9f9f9;
+    border-left: 5px solid #007bff;
+    padding: 16px 20px;
+    margin-top: 30px;
+    font-style: italic;
+    font-size: 16px;
+    color: #444;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    animation: fadeInUp 1s ease;
+  }
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+<h2>Bài đăng về game Blox Fruits</h2><div class="divider"><div class="divider-line"></div></div>
+<div class="content">Đây là bài viết chia sẻ về kinh nghiệm chơi Blox Fruits.</div><div class="divider"><div class="divider-line"></div></div>
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/tKGBhdkCIy0" allowfullscreen></iframe></div><div class="divider"><div class="divider-line"></div></div>
+<div class="download-section"><a href="https://biofileview.blogspot.com/p/script-blox-fruits-hoa-poy-tv.html" target="_blank">🔗 Link Chính</a><a href="https://biofileview.blogspot.com/p/script-blox-fruits-hoa-poy-tv.html" target="_blank">🌀 Link Phụ</a><div class="warning" id="warn">&#9888;&#65039; Nếu link lỗi, hãy chọn link khác nhé!</div></div><div class="random-story-box"><div class="story-text">&#10024; Nghe nói khi Hòa Poy TV quay video, ánh sáng tự điều chỉnh, gió thổi nhẹ, chim bay ngang còn quay lại nhìn. Video như được thiên nhiên sản xuất chung!</div></div>
+</div>
