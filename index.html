@@ -57,6 +57,34 @@
     .post p {
       color: #ccc;
     }
+    .form-container {
+      background: #141414;
+      padding: 20px;
+      margin-bottom: 40px;
+      border: 1px solid #333;
+      border-radius: 10px;
+    }
+    .form-container input, .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      background: #222;
+      color: #fff;
+    }
+    .form-container button {
+      padding: 10px 20px;
+      background: #00c6ff;
+      border: none;
+      border-radius: 6px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .form-container button:hover {
+      background: #009edc;
+    }
     footer {
       background: #111;
       color: #888;
@@ -77,18 +105,45 @@
     <a href="https://www.youtube.com/@hoapoytv" target="_blank">Kênh YouTube</a>
   </nav>
   <main>
-    <div class="post">
-      <h2>🎮 Game Blox Fruits Auto Farm</h2>
-      <p>Tải ngay bản Auto Farm full tính năng cho Blox Fruits mới nhất. Có bypass, hỗ trợ cả mobile & PC.</p>
+    <div class="form-container">
+      <h2>📝 Viết bài mới</h2>
+      <input type="text" id="title" placeholder="Tiêu đề bài viết">
+      <textarea id="content" rows="5" placeholder="Nội dung bài viết"></textarea>
+      <button onclick="addPost()">Đăng bài</button>
     </div>
-    <div class="post">
-      <h2>🧠 Script Hack Pet Simulator 99</h2>
-      <p>Full GUI script cho Pet Sim 99, update liên tục. Miễn phí hoàn toàn.</p>
+
+    <div id="posts">
+      <div class="post">
+        <h2>🎮 Game Blox Fruits Auto Farm</h2>
+        <p>Tải ngay bản Auto Farm full tính năng cho Blox Fruits mới nhất. Có bypass, hỗ trợ cả mobile & PC.</p>
+      </div>
+      <div class="post">
+        <h2>🧠 Script Hack Pet Simulator 99</h2>
+        <p>Full GUI script cho Pet Sim 99, update liên tục. Miễn phí hoàn toàn.</p>
+      </div>
     </div>
-    <!-- Bạn có thể thêm nhiều mục .post nữa tại đây -->
   </main>
   <footer>
     © 2025 Hòa Poy TV - Chia sẻ game & script miễn phí
   </footer>
+
+  <script>
+    function addPost() {
+      const title = document.getElementById('title').value.trim();
+      const content = document.getElementById('content').value.trim();
+      if (!title || !content) {
+        alert("Vui lòng nhập tiêu đề và nội dung!");
+        return;
+      }
+
+      const post = document.createElement('div');
+      post.className = 'post';
+      post.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+      document.getElementById('posts').prepend(post);
+
+      document.getElementById('title').value = '';
+      document.getElementById('content').value = '';
+    }
+  </script>
 </body>
 </html>
